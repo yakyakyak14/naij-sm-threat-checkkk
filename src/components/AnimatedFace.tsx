@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "@/components/ui/security-card.css";
 
-export function AnimatedFace() {
+export function AnimatedFace({ className }: { className?: string }) {
   const [animationKey, setAnimationKey] = useState(0);
 
   useEffect(() => {
@@ -16,7 +16,10 @@ export function AnimatedFace() {
       <svg
         viewBox="0 0 80 96"
         fill="none"
-        className="w-[320px] h-[384px] sm:w-[400px] sm:h-[480px] lg:w-[480px] lg:h-[576px]"
+        className={
+          className ??
+          "w-[320px] h-[384px] sm:w-[400px] sm:h-[480px] lg:w-[480px] lg:h-[576px]"
+        }
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.5"

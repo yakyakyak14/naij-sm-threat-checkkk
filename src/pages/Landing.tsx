@@ -1,4 +1,4 @@
-import { Shield, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -12,12 +12,19 @@ const Landing = () => {
       {/* Header */}
       <header className="glass-panel border-b border-border/50 px-6 py-4 flex items-center justify-between sticky top-0 z-50">
         <div className="flex items-center gap-3">
-          <div className="p-2 rounded-lg bg-primary/10 glow-primary">
-            <Shield className="h-5 w-5 text-primary" />
+          <div className="flex items-center gap-3">
+            <div className="p-2 rounded-lg bg-primary/10 glow-primary">
+              <AnimatedFace className="w-7 h-7" />
+            </div>
+            <div className="leading-tight">
+              <div className="text-lg font-bold tracking-tight">
+                <span className="text-gradient-primary">SENTINEL</span>
+              </div>
+              <div className="text-[10px] text-muted-foreground font-mono">
+                AI Threat Intelligence
+              </div>
+            </div>
           </div>
-          <h1 className="text-lg font-bold tracking-tight">
-            <span className="text-gradient-primary">SENTINEL</span>
-          </h1>
         </div>
         <Button onClick={() => navigate("/dashboard")} variant="default" size="sm">
           Open Dashboard <ArrowRight className="h-4 w-4 ml-1" />
@@ -81,7 +88,7 @@ const Landing = () => {
       <footer className="border-t border-border/30 py-6 px-6">
         <div className="max-w-[1400px] mx-auto flex items-center justify-between text-xs text-muted-foreground font-mono">
           <div className="flex items-center gap-2">
-            <Shield className="h-4 w-4 text-primary" />
+            <AnimatedFace className="w-4 h-4" />
             SENTINEL
           </div>
           <div className="flex items-center gap-2">
